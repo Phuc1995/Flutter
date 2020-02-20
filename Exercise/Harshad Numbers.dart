@@ -26,6 +26,7 @@ List<int> harshad(n) {
 }
 
 List<int> ListResult(int n, bool index) {
+  //note
   List<int> list = [];
   var total = CountTotal(n);
   bool check = true;
