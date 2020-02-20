@@ -1,0 +1,5 @@
+name: flutter_app
+description: A new Flutter application.
+
+dependencies: 
+  test:  ^1.12.0
