@@ -1,0 +1,16 @@
+Basic
+	- Dart allows users to check for types using the ‘is’ keyword
+	- Interpolation: ${expression)
+	- an ‘r’ to indicate to tell Dart to treat the string differently, to ignore escape characters 
+		+ print(r'this\nstring\nhas\nescape\ncharacters');
+	- Named Constructors
+	- Factory Constructors: can return value in constructor
+	
+More Advanced 
+	- Arrow Functions (Lambdas) 
+	- Mixins 
+	- Collections 
+	- Errors & Exceptions 
+	- Asynchronicity 
+	- ?.The ?. operator short-circuits to null if the left-hand side is null.
+	- ??= The ?? operator returns the left-hand side if it is not null, and the right-hand side otherwise.
