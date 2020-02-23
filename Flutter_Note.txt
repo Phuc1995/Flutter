@@ -1,0 +1,10 @@
+- stful
+- Wrap
+ 
+- Container():
+	+ alignment: AlignmentDirectional.center
+	+ constraints: max size or min size
+	+ padding: EdgeInsets.fromLTRB(left, top, right, bottom)
+	+ decoration: BoxDecoration():
+		* shape: BoxShape.circle
+		* borderRadius: BorderRadius.all(Radius.circular(10))
