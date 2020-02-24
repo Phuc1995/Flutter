@@ -8,63 +8,67 @@ class AppWidget extends StatefulWidget {
   AppWidget() {
     debugPrint("AppWidget - constructor - " + hashCode.toString());
   }
-
   @override
   _AppWidgetState createState() {
-    // TODO: implement createState
+    debugPrint("AppWidget - createState - " + hashCode.toString());
     return _AppWidgetState();
   }
 }
 
 class _AppWidgetState extends State<AppWidget> {
   bool _bright = false;
-
   _brightnessCallback() {
     setState(() => _bright = !_bright);
   }
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     debugPrint("_AppWidgetState - build - " + hashCode.toString());
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-          primarySwatch: Colors.blue,
-          brightness: _bright ? Brightness.light : Brightness.dark),
-      home: FlowerWidget(),
-    );
+        title: 'Flutter Demo',
+        theme: ThemeData(
+            primarySwatch: Colors.blue,
+            brightness: _bright ? Brightness.light : Brightness.dark),
+        home: FlowerWidget(
+            imageSrc: _bright
+                ? "https://www.viewbug.com/media/mediafiles/" +
+                    "2015/07/05/56234977_large1300.jpg"
+                : "https://images.unsplash.com/" +
+                    "photo-1531603071569-0dd65ad72d53?ixlib=rb-1.2.1&ixid=" +
+                    "eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+            brightnessCallback: _brightnessCallback));
   }
 }
 
 class FlowerWidget extends StatefulWidget {
   final String imageSrc;
   final VoidCallback brightnessCallback;
-
   FlowerWidget({Key key, this.imageSrc, this.brightnessCallback})
       : super(key: key) {
     debugPrint("FlowerWidget - constructor - " + hashCode.toString());
   }
   @override
-  State<StatefulWidget> createState() {
+  _FlowerWidgetState createState() {
     debugPrint("FlowerWidget - createState - " + hashCode.toString());
-    // TODO: implement createState
-    return _FlowerWidget();
+    return _FlowerWidgetState();
   }
 }
 
-class _FlowerWidget extends State<FlowerWidget> {
+class _FlowerWidgetState extends State<FlowerWidget> {
   double _blur = 0;
   _FlowerWidgetState() {
     debugPrint("_FlowerWidgetState - constructor - " + hashCode.toString());
   }
-
   @override
-  void initState() {
+  initState() {
     debugPrint("_FlowerWidgetState - initState - " + hashCode.toString());
-    super.initState();
   }
 
+  /**
+   * Fired when Flutter detects that the data from another source has changed,
+   * possibly affecting the UI and causing a call to ‘build’.
+   * In this case it is when the Theme changes (its an InheritedWidget).
+   */
   @override
   void didChangeDependencies() {
     debugPrint(
@@ -72,9 +76,14 @@ class _FlowerWidget extends State<FlowerWidget> {
   }
 
   @override
+  /**
+   * Fired when the widget is reconstructed as its widget data has changed,
+   * In this case it is when a new FlowerWidget is created with a different
+   * imageSrc.
+   */
   void didUpdateWidget(Widget oldWidget) {
     debugPrint("_FlowerWidgetState - didUpdateWidget - " + hashCode.toString());
-    // The flower image has changed, so reset the blur.
+// The flower image has changed, so reset the blur.
     _blur = 0;
   }
 
@@ -92,18 +101,24 @@ class _FlowerWidget extends State<FlowerWidget> {
         new IconButton(
             icon: new Icon(Icons.refresh),
             onPressed: () {
-              debugPrint("test " + hashCode.toString());
               widget.brightnessCallback();
             })
       ]),
       body: new Container(
         decoration: new BoxDecoration(
+// dependency on inherited widget - start
             color: Theme.of(context).backgroundColor,
+// dependency on inherited widget - end
             image: new DecorationImage(
-                image: NetworkImage(widget.imageSrc), fit: BoxFit.cover)),
+// dependency on data from widget - start
+                image: NetworkImage(widget.imageSrc),
+// dependency on data from widget - end
+                fit: BoxFit.cover)),
         child: new BackdropFilter(
+// dependency on state data - start
           filter: new ImageFilter.blur(sigmaX: _blur, sigmaY: _blur),
-          child: Container(
+// dependency on state data - end
+          child: new Container(
             decoration: new BoxDecoration(color: Colors.white.withOpacity(0.0)),
           ),
         ),

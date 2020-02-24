@@ -1,0 +1,1 @@
+compile time != run time ? const keyword, it’s assigned a value at compile time , A const does not have access to any run-time values or helper functions to derive its value.

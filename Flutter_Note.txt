@@ -8,3 +8,14 @@
 	+ decoration: BoxDecoration():
 		* shape: BoxShape.circle
 		* borderRadius: BorderRadius.all(Radius.circular(10))
+		
+- BLoC(Business Logic Components) Pattern  - Streams:
+	+ resource: contain UI of app
+	+ blocs: contain business logic
+	+ repository: handle API call
+	+ validation --> BLoC --> UI
+	
+- Stream:
+	+ pub-sub
+	+ Single-Subscription Stream
+	+ Broadcast Streams
