@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:form_login/src/blocs/login_bloc.dart';
 import 'package:form_login/src/resources/home.dart';
@@ -52,7 +54,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Padding(
                     padding: const EdgeInsets.fromLTRB(0, 0, 0, 40),
-                    child: StreamBuilder(
+                    child: StreamBuilder<DynamicLibrary>(
                       stream: loginBloc.userStream,
                       builder: (context, snapshot) => TextField(
                         controller: _userController,

@@ -1,9 +1,10 @@
 import 'dart:async';
+import 'dart:ffi';
 import 'package:form_login/src/validators/validations.dart';
 
 class LoginBloc {
-  StreamController _userController = new StreamController();
-  StreamController _passController = new StreamController();
+  final StreamController _userController = new StreamController();
+  final StreamController _passController = StreamController();
 
   Stream get userStream => _userController.stream;
   Stream get passStream => _passController.stream;
@@ -11,6 +12,7 @@ class LoginBloc {
   bool isValiLogin(String user, String pass) {
     if (!Validation.isValidUser(user)) {
       //sink is input
+      print("a");
       _userController.sink.addError("User error");
       //
       return false;

@@ -3,7 +3,7 @@
  
 - Container():
 	+ alignment: AlignmentDirectional.center
-	+ constraints: max size or min size
+	+ constraints: BoxConstraints.expand(): max size or min size
 	+ padding: EdgeInsets.fromLTRB(left, top, right, bottom)
 	+ decoration: BoxDecoration():
 		* shape: BoxShape.circle
@@ -19,3 +19,7 @@
 	+ pub-sub
 	+ Single-Subscription Stream
 	+ Broadcast Streams
+	
+- FireBase:
+	+ android/app/src/main/AndroidManifest.xml ( package="vn.com.example.app_taxi") for Android package name
+	+ dowload file config/addroid/app

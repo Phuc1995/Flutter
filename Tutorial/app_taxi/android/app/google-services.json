@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1004929438759",
+    "firebase_url": "https://flutterexample-f30af.firebaseio.com",
+    "project_id": "flutterexample-f30af",
+    "storage_bucket": "flutterexample-f30af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1004929438759:android:4ec0c39f959c303007aa02",
+        "android_client_info": {
+          "package_name": "vn.com.example.app_taxi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1004929438759-ejcl4ckbku7bgc37ujkba673vgtim07f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBakM4GtdOOeo5U6z8bQI6cMGdpBPlcA44"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1004929438759-ejcl4ckbku7bgc37ujkba673vgtim07f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
