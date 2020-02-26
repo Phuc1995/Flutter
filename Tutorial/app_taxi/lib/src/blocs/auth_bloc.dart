@@ -43,8 +43,13 @@ class AuthBloc {
     return true;
   }
 
-  void signUp(String email, String pass, String phone, String name, Function onSuccess){
-      _firAuth.signUp(email, pass, name, phone, onSuccess);
+  void signUp(String email, String pass, String phone, String name, Function onSuccess, Function(String) onSignUpError){
+      _firAuth.signUp(email, pass, name, phone, onSuccess, onSignUpError);
+  }
+
+  void signIn(String email, String pass, Function onSuccess, Function(String) onSignInError){
+    print( email);
+    _firAuth.signIn(email, pass, onSuccess, onSignInError);
   }
 
   void dispose() {
