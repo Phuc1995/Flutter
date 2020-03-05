@@ -23,3 +23,8 @@
 - FireBase:
 	+ android/app/src/main/AndroidManifest.xml ( package="vn.com.example.app_taxi") for Android package name
 	+ dowload file config/addroid/app
+	
+- bloc:
+	+ https://dart.dev/codelabs/async-await
+	+ https://dart.dev/tutorials/language/streams
+	+ https://bloclibrary.dev/#/coreconcepts?id=transitions

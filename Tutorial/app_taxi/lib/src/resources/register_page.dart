@@ -170,6 +170,7 @@ class _RegisterPageState extends State<RegisterPage> {
       LoadingDialog.showLoadingDialog(context, "Loading.....");
       authBloc.signUp(_emailController.text, _passController.text, _phoneController.text, _nameController.text, (){
         LoadingDialog.hideLoadingDialog(context);
+
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => LoginPage()));
 

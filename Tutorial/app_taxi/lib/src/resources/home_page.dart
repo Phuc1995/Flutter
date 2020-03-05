@@ -10,8 +10,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  GoogleMapController mapController;
   var _scaffoldKey = new GlobalKey<ScaffoldState>();
-
+  void _onMapCreated(GoogleMapController controller) {
+    mapController = controller;
+  }
   @override
   Widget build(BuildContext context) {
     print("build UI");
@@ -23,6 +26,7 @@ class _HomePageState extends State<HomePage> {
         child: Stack(
           children: <Widget>[
             GoogleMap(
+              onMapCreated: _onMapCreated,
               initialCameraPosition: CameraPosition(
                 target: LatLng(10.7915178, 106.7271422),
                 zoom: 14.4746,
@@ -57,16 +61,17 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            Positioned(left: 20, right: 20, bottom: 40,
-              height: 248,
-//              child: CarPickup(_tripDistance),
-            )
+//            Positioned(left: 20, right: 20, bottom: 40,
+//              height: 248,
+////              child: CarPickup(_tripDistance),
+//            )
           ],
         ),
       ),
       drawer: Drawer(
         child: HomeMenu(),
       ),
+
     );
   }
 //

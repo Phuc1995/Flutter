@@ -1,5 +1,4 @@
 import 'package:app_taxi/src/blocs/auth_bloc.dart';
-import 'package:app_taxi/src/resources/login_page.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends InheritedWidget {
